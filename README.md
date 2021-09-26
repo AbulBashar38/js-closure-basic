@@ -24,4 +24,5 @@ var myFunc = sum();
 console.dir(myFunc)
 ```
 এই কোড গুলোর output নিচের ছবিতে দেওয়া হলো
-![simpleOutput](./image/simple_output)
+
+![simpleOutput](./image/simple-output.png)
