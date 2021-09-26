@@ -1,9 +1,9 @@
-var sum = function(){
-    var num1 = 1;
-    var num2 = 2;
+function bakeAccount(initialBallance) {
+    var ballance = initialBallance;
     return function(){
-        return num1 + num2;
+        return ballance;
     }
 }
-var myFunc = sum();
-console.dir(myFunc)
+
+var account = bakeAccount(100000);
+console.dir(account);

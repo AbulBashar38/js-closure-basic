@@ -26,3 +26,18 @@ console.dir(myFunc)
 এই কোড গুলোর output নিচের ছবিতে দেওয়া হলো
 
 ![simpleOutput](./image/simple-output.png)
+
+এখানে `sum` function আর একটা anonymous function return করছে। এই anonymous function return করে `num1 + num2`. কিন্তু anonymous function এর ভিতরে num1 আর num2 নেই। num1 আর num2 আছে তার parent function `sum` এর ভিতরে। এখন এই anonymous function টা তার parent থেকে num1 and num2 এর রেফারেন্স এনে একটা function তৈরি করে নিজের কাছে রেখে দেয় একেই closure বলে। আর সেই জন্যই আমরা parent এর জিনিস child এ access করতে পারি।
+# Advance Example
+```javascript
+function bakeAccount(initialBallance) {
+    var ballance = initialBallance;
+    return function(){
+        return ballance;
+    }
+}
+
+var account = bakeAccount(100000);
+console.dir(account);
+```
+এখানে আমরা ballance কে protected way তে closure দিয়ে access করতে পারছি কিন্তু সরাসরি নাহ। অর্থাৎ আমরা closure দিয়ে protected way তে কোনো কিছু access করতে পারি।
