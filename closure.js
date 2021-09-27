@@ -1,9 +1,10 @@
-function bakeAccount(initialBallance) {
-    var ballance = initialBallance;
-    return function(){
-        return ballance;
-    }
+for (let i = 0; i < 3; i++) {
+    setTimeout(() => {
+        console.log('let', i);
+    }, 3000);  
 }
-
-var account = bakeAccount(100000);
-console.dir(account);
+for (var i = 0; i < 3; i++) {
+    setTimeout(() => {
+        console.log( 'var',i);
+    }, 3000);  
+}
