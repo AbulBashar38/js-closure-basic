@@ -42,10 +42,7 @@ console.dir(account);
 ```
 এখানে আমরা ballance কে protected way তে closure দিয়ে access করতে পারছি কিন্তু সরাসরি নাহ। অর্থাৎ আমরা closure দিয়ে protected way তে কোনো কিছু access করতে পারি।
 ### `Closure is a function that refer to independent (free) variable.(variable that are used locally but define in enclosing scope).
-![forLoopClosure](./image/forLoopClosure)
+![forLoopClosure](./image/forLoopClosure.png)
 এইখানে দেখতে পারছি দুই ক্ষেত্রেই same code লেখা হয়েছে। কিন্তু `let i = 0` এর পরিবর্তে `var i = 0` দেওয়া হয়েছে। আর তাই output আসতে ভিন্ন রকম। let এর ক্ষেত্রে output আসছে `0 1 2` আর var এর ক্ষেত্রে আসছে `3 3 3`। আসলে এমন কেনো আসলো?
 এমন আসার কারন হলো আমরা জানি var = i একটি global variable এইক্ষেত্রে setTimeOut function টা যেহেতু 3 secound দেরি করছে সেহেতু loop টা আগে চলে i এর মান বার বার change হচ্ছে এবং যখন ই change হচ্ছে loop টা দেখছে যে এই i তো সেই আগের i তখন একই i এর জন্য একটি closure ই তৈরি হচ্ছে এবং এর মান contenously update হয়ে 3 হয়ে যাচ্ছে। এবং 3 secound পর 3 টা 3 print করছে।
 কিন্ত let হলো block scope। তাই loop চলার সময় প্রতিবারের i এর মানের জন্য একটা করে block scope তৈরি হচ্ছে। তাই setTimeout এর function টা যখন তার parent এর থেকে i কে access করতে যায় তখন প্রতিটা block scope এর জন্য different different closure তৈরি করে i এর মান different different reference তার ভিতরে রাখে তাই প্রতিবার different result print করে।
-```javascript
-
-```
